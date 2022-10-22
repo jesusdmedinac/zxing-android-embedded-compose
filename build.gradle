@@ -1,11 +1,15 @@
 buildscript {
+    ext {
+        kotlin_version = '1.7.20'
+    }
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.3'
+        classpath 'com.android.tools.build:gradle:7.0.4'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -19,6 +23,6 @@ subprojects {
     version = '4.3.0'
     group = 'com.journeyapps'
 
-    ext.androidTargetSdk = 30
+    ext.androidTargetSdk = 33
     ext.zxingCore = 'com.google.zxing:core:3.4.1'
 }

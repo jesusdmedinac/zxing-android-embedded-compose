@@ -1,12 +1,12 @@
 package com.journeyapps.barcodescanner.camera;
 
-import com.google.zxing.client.android.camera.open.OpenCameraInterface;
+import com.google.zxing.client.android.camera.open.OpenCamera;
 
 /**
  *
  */
 public class CameraSettings {
-    private int requestedCameraId = OpenCameraInterface.NO_REQUESTED_CAMERA;
+    private int requestedCameraId = OpenCamera.NO_REQUESTED_CAMERA;
     private boolean scanInverted = false;
     private boolean barcodeSceneModeEnabled = false;
     private boolean meteringEnabled = false;

@@ -24,7 +24,7 @@ import android.view.Surface;
 import android.view.SurfaceHolder;
 
 import com.google.zxing.client.android.AmbientLightManager;
-import com.google.zxing.client.android.camera.open.OpenCameraInterface;
+import com.google.zxing.client.android.camera.open.OpenCamera;
 import com.journeyapps.barcodescanner.Size;
 import com.journeyapps.barcodescanner.SourceData;
 
@@ -138,12 +138,12 @@ public final class CameraManager {
      * Must be called from camera thread.
      */
     public void open() {
-        camera = OpenCameraInterface.open(settings.getRequestedCameraId());
+        camera = OpenCamera.open(settings.getRequestedCameraId());
         if (camera == null) {
             throw new RuntimeException("Failed to open camera");
         }
 
-        int cameraId = OpenCameraInterface.getCameraId(settings.getRequestedCameraId());
+        int cameraId = OpenCamera.getCameraId(settings.getRequestedCameraId());
         cameraInfo = new Camera.CameraInfo();
         Camera.getCameraInfo(cameraId, cameraInfo);
     }
